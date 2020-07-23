@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Weather View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WeatherViewController" customModule="weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Uqo-Bx-c0f">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Uqo-Bx-c0f" userLabel="Temp Stack">
                                 <rect key="frame" x="129" y="603" width="156" height="27.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thermometer" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="sRl-hB-ndD">
@@ -55,7 +55,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6ij-Y1-qMU">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6ij-Y1-qMU" userLabel="Wind stack">
                                 <rect key="frame" x="123" y="650.5" width="168" height="20"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wind" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ips-BY-qo1">
@@ -84,34 +84,85 @@
                                     <constraint firstAttribute="height" constant="200" id="eBV-0R-YyL"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGG-i1-Izv">
+                                <rect key="frame" x="360" y="64" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="trr-BO-dDh"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" image="magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="searchPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Wh-w2-hgH"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xws-W1-t7z">
+                                <rect key="frame" x="54" y="64" width="306" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f48-6E-1RG">
+                                <rect key="frame" x="20" y="64" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="3VV-8G-iaI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" image="mappin.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="locationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3W1-zD-YtL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="Eso-cQ-4zU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="11c-Rz-3IF"/>
+                            <constraint firstItem="xws-W1-t7z" firstAttribute="height" secondItem="f48-6E-1RG" secondAttribute="height" id="5DU-Xd-Am3"/>
                             <constraint firstItem="Uqo-Bx-c0f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5px-fI-y4W"/>
+                            <constraint firstItem="WGG-i1-Izv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="62X-Xo-Uvw"/>
                             <constraint firstItem="6ij-Y1-qMU" firstAttribute="top" secondItem="Uqo-Bx-c0f" secondAttribute="bottom" constant="20" id="7Fe-pO-CzY"/>
+                            <constraint firstItem="f48-6E-1RG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="9Yr-RM-VRo"/>
+                            <constraint firstItem="f48-6E-1RG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Asb-fi-HiP"/>
                             <constraint firstItem="rvz-1x-hSH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GcQ-yd-lzZ"/>
                             <constraint firstItem="r6C-Ag-o86" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jes-YG-szb"/>
                             <constraint firstItem="r6C-Ag-o86" firstAttribute="top" secondItem="Eso-cQ-4zU" secondAttribute="bottom" constant="5" id="JkT-PJ-88E"/>
+                            <constraint firstItem="xws-W1-t7z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="KX1-IU-OnA"/>
+                            <constraint firstItem="xws-W1-t7z" firstAttribute="height" secondItem="f48-6E-1RG" secondAttribute="height" id="OGA-Zh-it9"/>
                             <constraint firstItem="rvz-1x-hSH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ONv-c5-pFg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WGG-i1-Izv" secondAttribute="trailing" constant="20" id="PKw-Z1-ze3"/>
+                            <constraint firstItem="WGG-i1-Izv" firstAttribute="leading" secondItem="xws-W1-t7z" secondAttribute="trailing" id="TgR-e4-rXM"/>
                             <constraint firstItem="Uqo-Bx-c0f" firstAttribute="top" secondItem="rvz-1x-hSH" secondAttribute="bottom" constant="55" id="WAq-c2-C6w"/>
                             <constraint firstItem="rvz-1x-hSH" firstAttribute="top" secondItem="Eso-cQ-4zU" secondAttribute="bottom" constant="90" id="WJ9-mf-jRQ"/>
+                            <constraint firstItem="WGG-i1-Izv" firstAttribute="height" secondItem="xws-W1-t7z" secondAttribute="height" id="Y3x-hm-uVa"/>
                             <constraint firstItem="6ij-Y1-qMU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kRy-LS-wPb"/>
+                            <constraint firstItem="xws-W1-t7z" firstAttribute="leading" secondItem="f48-6E-1RG" secondAttribute="trailing" id="oU3-2X-peX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="Eso-cQ-4zU" id="Yyu-8n-KX9"/>
+                        <outlet property="currentTemp" destination="Ube-XH-YQP" id="R6p-dV-Tzs"/>
+                        <outlet property="descriptionLabel" destination="r6C-Ag-o86" id="pg3-4i-QAX"/>
+                        <outlet property="direction" destination="MOA-8y-wL7" id="Vdp-3m-Uh7"/>
+                        <outlet property="maxTemp" destination="RDW-cK-E7S" id="q0B-Lb-Z7S"/>
+                        <outlet property="minTemp" destination="YUV-Wg-tzg" id="XeQ-82-ZKI"/>
+                        <outlet property="searchField" destination="xws-W1-t7z" id="hzz-bW-LML"/>
+                        <outlet property="speed" destination="wXg-gg-fmT" id="Yn8-Jv-ASj"/>
+                        <outlet property="weatherIcon" destination="rvz-1x-hSH" id="L6X-oo-n1w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+            <point key="canvasLocation" x="102.89855072463769" y="11.383928571428571"/>
         </scene>
     </scenes>
     <resources>
         <image name="cloud.sun" catalog="system" width="128" height="88"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="mappin.circle" catalog="system" width="128" height="121"/>
         <image name="thermometer" catalog="system" width="87" height="128"/>
         <image name="wind" catalog="system" width="128" height="103"/>
         <namedColor name="background">
-            <color red="0.67804643259999997" green="0.8501598413" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.67799997329711914" green="0.85000002384185791" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
