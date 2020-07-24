@@ -25,6 +25,7 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         weatherManager.delegate = self
+        searchField.delegate = self
     }
     
     @IBAction func searchPressed(_ sender: Any) {
@@ -53,5 +54,32 @@ extension WeatherViewController: WeatherManagerDelegate{
     
     func didFailWithError(error: Error) {
         print(error)
+    }
+}
+
+//MARK: - UITextFieldDelegate
+
+extension WeatherViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchField.endEditing(true)
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if textField.text != "" {
+            return true
+        }
+        else {
+            textField.placeholder = "Type something..."
+            return false
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let city = searchField.text {
+            weatherManager.fetchWeather(cityName: city)
+        }
+        searchField.text = ""
+    
     }
 }
