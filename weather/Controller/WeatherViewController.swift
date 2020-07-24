@@ -20,8 +20,11 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var direction: UILabel!
     @IBOutlet weak var searchField: UITextField!
     
+    var weatherManager = WeatherManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        weatherManager.delegate = self
     }
     
     @IBAction func searchPressed(_ sender: Any) {
@@ -29,4 +32,26 @@ class WeatherViewController: UIViewController {
     @IBAction func locationPressed(_ sender: Any) {
     }
     
+}
+
+//MARK: - WeatherManagerDelegate
+
+extension WeatherViewController: WeatherManagerDelegate{
+    
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
+        DispatchQueue.main.async{
+            self.descriptionLabel.text = weather.description
+            self.cityLabel.text = weather.cityName
+            self.weatherIcon.image = UIImage(systemName: weather.conditionName)
+            self.currentTemp.text = "\(weather.temperatureString)°C"
+            self.minTemp.text = "\(weather.min_temperatureString)°C"
+            self.maxTemp.text = "\(weather.max_temperatureString)°C"
+            self.speed.text = "\(weather.windSpeed) mph, "
+            self.direction.text = "\(weather.windDirection) direction"
+        }
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
 }
