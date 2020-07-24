@@ -20,6 +20,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var speed: UILabel!
     @IBOutlet weak var direction: UILabel!
     @IBOutlet weak var searchField: UITextField!
+    @IBOutlet weak var thermSymbol: UIImageView!
     @IBOutlet weak var symbol: UIImageView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     
@@ -34,6 +35,7 @@ class WeatherViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         symbol.isHidden = true
+        thermSymbol.isHidden = true
         activity.startAnimating()
     }
     
@@ -61,6 +63,7 @@ extension WeatherViewController: WeatherManagerDelegate{
             self.speed.text = "\(weather.windSpeed) m/s, "
             self.direction.text = "\(weather.windDirection) direction"
             self.symbol.isHidden = false
+            self.thermSymbol.isHidden = false
             if self.activity.isHidden == false {
                 self.activity.stopAnimating()
                 self.activity.isHidden = true

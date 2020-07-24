@@ -62,7 +62,7 @@ struct WeatherManager{
             let speed = decodedData.wind.speed
             let deg = decodedData.wind.deg
             
-            let weather = WeatherModel(conditionId: id, cityName: name, description: description, minTemperature: temp, temperature: temp_min, maxTemperature: temp_max, windSpeed: speed, windDegree: deg)
+            let weather = WeatherModel(conditionId: id, cityName: name, description: description, minTemperature: temp_min, temperature: temp, maxTemperature: temp_max, windSpeed: speed, windDegree: deg)
             return weather
             
         } catch {

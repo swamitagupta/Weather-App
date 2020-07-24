@@ -155,6 +155,7 @@
                         <outlet property="searchField" destination="xws-W1-t7z" id="hzz-bW-LML"/>
                         <outlet property="speed" destination="wXg-gg-fmT" id="Yn8-Jv-ASj"/>
                         <outlet property="symbol" destination="Ips-BY-qo1" id="nDh-kC-8iT"/>
+                        <outlet property="thermSymbol" destination="sRl-hB-ndD" id="Hyv-re-fe7"/>
                         <outlet property="weatherIcon" destination="rvz-1x-hSH" id="L6X-oo-n1w"/>
                     </connections>
                 </viewController>
@@ -169,7 +170,7 @@
         <image name="thermometer" catalog="system" width="87" height="128"/>
         <image name="wind" catalog="system" width="128" height="103"/>
         <namedColor name="background">
-            <color red="0.80477893349999996" green="0.93364715580000002" blue="0.99925047160000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
