@@ -18,7 +18,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eso-cQ-4zU">
                                 <rect key="frame" x="207" y="258" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -116,6 +116,36 @@
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                                 <color key="color" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1e-hD-Ebu">
+                                <rect key="frame" x="167" y="812" width="80" height="30"/>
+                                <color key="backgroundColor" name="background"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Aix-xN-Cqg"/>
+                                </constraints>
+                                <color key="tintColor" red="0.062745098040000002" green="0.078431372550000003" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Details"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
+                                        <color key="value" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="0.0" height="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="5cW-JT-Tgb" kind="show" id="u1U-N2-KIY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
@@ -126,6 +156,7 @@
                             <constraint firstItem="6ij-Y1-qMU" firstAttribute="top" secondItem="Uqo-Bx-c0f" secondAttribute="bottom" constant="20" id="7Fe-pO-CzY"/>
                             <constraint firstItem="f48-6E-1RG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="9Yr-RM-VRo"/>
                             <constraint firstItem="f48-6E-1RG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="Asb-fi-HiP"/>
+                            <constraint firstItem="s1e-hD-Ebu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-20" id="CcT-Xf-bh8"/>
                             <constraint firstItem="rvz-1x-hSH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GcQ-yd-lzZ"/>
                             <constraint firstItem="r6C-Ag-o86" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jes-YG-szb"/>
                             <constraint firstItem="r6C-Ag-o86" firstAttribute="top" secondItem="Eso-cQ-4zU" secondAttribute="bottom" constant="5" id="JkT-PJ-88E"/>
@@ -138,6 +169,7 @@
                             <constraint firstItem="Uqo-Bx-c0f" firstAttribute="top" secondItem="rvz-1x-hSH" secondAttribute="bottom" constant="55" id="WAq-c2-C6w"/>
                             <constraint firstItem="rvz-1x-hSH" firstAttribute="top" secondItem="Eso-cQ-4zU" secondAttribute="bottom" constant="90" id="WJ9-mf-jRQ"/>
                             <constraint firstItem="WGG-i1-Izv" firstAttribute="height" secondItem="xws-W1-t7z" secondAttribute="height" id="Y3x-hm-uVa"/>
+                            <constraint firstItem="s1e-hD-Ebu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jkC-Hy-ZFF"/>
                             <constraint firstItem="6ij-Y1-qMU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kRy-LS-wPb"/>
                             <constraint firstItem="xws-W1-t7z" firstAttribute="leading" secondItem="f48-6E-1RG" secondAttribute="trailing" id="oU3-2X-peX"/>
                             <constraint firstItem="ftA-WA-oDr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xHh-HF-Bbn"/>
@@ -163,8 +195,67 @@
             </objects>
             <point key="canvasLocation" x="102.89855072463769" y="11.383928571428571"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="UZf-Qx-aEy">
+            <objects>
+                <viewController id="5cW-JT-Tgb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fdt-NH-UjI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7LN-Ay-0xd">
+                                <rect key="frame" x="0.0" y="264" width="414" height="481"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cupertino" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tie-Cb-AAk">
+                                <rect key="frame" x="142.5" y="50" width="129" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flE-iJ-cK4">
+                                <rect key="frame" x="26" y="177" width="65" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vks-mJ-vmS">
+                                <rect key="frame" x="197" y="94" width="21" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Broken clouds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMl-mc-WqH">
+                                <rect key="frame" x="296" y="213.5" width="98" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cloud.sun" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EDX-d5-mDO">
+                                <rect key="frame" x="299" y="127.5" width="93" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tie-Cb-AAk" firstAttribute="top" secondItem="RlP-dB-5we" secondAttribute="top" constant="50" id="aPL-6P-kQA"/>
+                            <constraint firstItem="tie-Cb-AAk" firstAttribute="centerX" secondItem="fdt-NH-UjI" secondAttribute="centerX" id="ehR-mA-BlU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RlP-dB-5we"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gYh-qM-9LP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YRo-Yx-wfp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804.34782608695662" y="9.375"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="cloud.sun" catalog="system" width="128" height="88"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="mappin.circle" catalog="system" width="128" height="121"/>
         <image name="thermometer" catalog="system" width="87" height="128"/>
