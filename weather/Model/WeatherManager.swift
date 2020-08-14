@@ -61,8 +61,16 @@ struct WeatherManager{
             let temp_max = decodedData.main.temp_max
             let speed = decodedData.wind.speed
             let deg = decodedData.wind.deg
+            let hum = decodedData.main.humidity
+            let pre = decodedData.main.pressure
+            let vis = decodedData.visibility
+            let short = decodedData.weather[0].shortDescription
+            let country = decodedData.sys.country
+            let sunrise = decodedData.sys.sunrise
+            let sunset = decodedData.sys.sunset
             
-            let weather = WeatherModel(conditionId: id, cityName: name, description: description, minTemperature: temp_min, temperature: temp, maxTemperature: temp_max, windSpeed: speed, windDegree: deg)
+            
+            let weather = WeatherModel(conditionId: id, cityName: name, country: country, description: description, minTemperature: temp_min, temperature: temp, maxTemperature: temp_max, windSpeed: speed, windDegree: deg, humidity: hum, pressure: pre, visibility: vis, shortDescription: short, sunrise: sunrise, sunset: sunset)
             return weather
             
         } catch {
@@ -72,3 +80,21 @@ struct WeatherManager{
         }
     }
 }
+
+/*
+ Details :
+ Name
+ Country
+ 
+ Current Temperature
+ Minimum temp
+ Max temp
+ Weather (weather->main)
+ wind speed
+ wind degree
+ Pressure
+ Humidity
+ visibility
+ sunrise
+ sunset
+ */

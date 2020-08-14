@@ -12,12 +12,19 @@ import UIKit
 struct WeatherModel{
     let conditionId: Int
     let cityName: String
+    let country: String
     let description: String
     let minTemperature: Double
     let temperature: Double
     let maxTemperature: Double
     let windSpeed: Double
     let windDegree: Int
+    let humidity: Int
+    let pressure: Int
+    let visibility: Int
+    let shortDescription: String
+    let sunrise: Int
+    let sunset: Int
     
     var conditionIcon:UIImage?{
         switch conditionId {
