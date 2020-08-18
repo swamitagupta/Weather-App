@@ -22,7 +22,6 @@ struct WeatherModel{
     let humidity: Int
     let pressure: Int
     let visibility: Int
-    //let shortDescription: String
     let sunrise: Int
     let sunset: Int
     

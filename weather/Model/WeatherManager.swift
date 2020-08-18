@@ -64,13 +64,12 @@ struct WeatherManager{
             let hum = decodedData.main.humidity
             let pre = decodedData.main.pressure
             let vis = decodedData.visibility
-            //let short = decodedData.weather[0].shortDescription
             let country = decodedData.sys.country
             let sunrise = decodedData.sys.sunrise
             let sunset = decodedData.sys.sunset
             
             
-            let weather = WeatherModel(conditionId: id, cityName: name, country: country, description: description, minTemperature: temp_min, temperature: temp, maxTemperature: temp_max, windSpeed: speed, windDegree: deg, humidity: hum, pressure: pre, visibility: vis, //shortDescription: short,
+            let weather = WeatherModel(conditionId: id, cityName: name, country: country, description: description, minTemperature: temp_min, temperature: temp, maxTemperature: temp_max, windSpeed: speed, windDegree: deg, humidity: hum, pressure: pre, visibility: vis,
                 sunrise: sunrise, sunset: sunset)
             return weather
             
