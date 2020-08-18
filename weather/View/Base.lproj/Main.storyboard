@@ -171,6 +171,7 @@
                         <outlet property="cityLabel" destination="Eso-cQ-4zU" id="Yyu-8n-KX9"/>
                         <outlet property="currentTemp" destination="Ube-XH-YQP" id="R6p-dV-Tzs"/>
                         <outlet property="descriptionLabel" destination="r6C-Ag-o86" id="pg3-4i-QAX"/>
+                        <outlet property="detailButton" destination="s1e-hD-Ebu" id="YMg-jh-Yc4"/>
                         <outlet property="direction" destination="MOA-8y-wL7" id="Vdp-3m-Uh7"/>
                         <outlet property="maxTemp" destination="RDW-cK-E7S" id="q0B-Lb-Z7S"/>
                         <outlet property="minTemp" destination="YUV-Wg-tzg" id="XeQ-82-ZKI"/>

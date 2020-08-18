@@ -23,6 +23,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var thermSymbol: UIImageView!
     @IBOutlet weak var symbol: UIImageView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
+    @IBOutlet weak var detailButton: UIButton!
     
     var weatherManager = WeatherManager()
     var locationManager = CLLocationManager()
@@ -37,6 +38,7 @@ class WeatherViewController: UIViewController {
         symbol.isHidden = true
         thermSymbol.isHidden = true
         activity.startAnimating()
+        detailButton.isHidden = true
     }
     
     @IBAction func searchPressed(_ sender: Any) {
