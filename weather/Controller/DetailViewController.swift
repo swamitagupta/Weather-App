@@ -21,9 +21,11 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         weatherManager.delegate = self
-        // Do any additional setup after loading the view.
     }
 }
+
+//MARK: - UITableViewDataSource
+
 extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath)

@@ -46,6 +46,8 @@ class WeatherViewController: UIViewController {
     }
     @IBAction func locationPressed(_ sender: Any) {
         locationManager.requestLocation()
+        activity.isHidden = false
+        activity.startAnimating()
     }
     
 }
