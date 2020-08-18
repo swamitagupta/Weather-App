@@ -197,6 +197,16 @@
                                 <rect key="frame" x="0.0" y="264" width="414" height="481"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" id="KiR-6f-iEK">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cellIdentifier" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KiR-6f-iEK" id="oqr-TN-mCD">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cupertino" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tie-Cb-AAk">
                                 <rect key="frame" x="142.5" y="50" width="129" height="36"/>
@@ -239,6 +249,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="gYh-qM-9LP"/>
                     <connections>
+                        <outlet property="cityName" destination="tie-Cb-AAk" id="1js-UN-xHL"/>
+                        <outlet property="grayDescription" destination="Vks-mJ-vmS" id="WAe-Od-SgR"/>
                         <outlet property="tableView" destination="7LN-Ay-0xd" id="coY-pl-VxX"/>
                     </connections>
                 </viewController>

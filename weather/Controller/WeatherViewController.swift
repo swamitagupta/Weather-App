@@ -101,6 +101,7 @@ extension WeatherViewController: UITextFieldDelegate {
             activity.startAnimating()
         }
         searchField.text = ""
+        
     
     }
 }
