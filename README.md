@@ -2,8 +2,6 @@
 
 ### Checklist
 - [ ] Multiword Cities
-- [ ] Check launchscreen background
-- [ ] Alert if city not found, stop activity indicator
 - [ ] Fetching location after search
 - [ ] Hide keyboard when tapped outside
 
