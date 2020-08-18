@@ -39,11 +39,26 @@ class WeatherViewController: UIViewController {
         thermSymbol.isHidden = true
         activity.startAnimating()
         detailButton.isHidden = true
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        searchField.endEditing(true)
     }
     
     @IBAction func searchPressed(_ sender: Any) {
-        searchField.endEditing(true)
+        if searchField.text != "" {
+            searchField.endEditing(true)
+        }
+        else {
+             let alert = UIAlertController(title: "Alert", message: "Enter a  city!", preferredStyle: .alert)
+             alert.addAction(UIAlertAction(title:"Okay", style: .default, handler: nil))
+             DispatchQueue.main.async {
+                 self.present(alert, animated: true)
+        }
+        }
     }
+    
     @IBAction func locationPressed(_ sender: Any) {
         locationManager.requestLocation()
         activity.isHidden = false
@@ -94,7 +109,7 @@ extension WeatherViewController: UITextFieldDelegate {
         return true
     }
     
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+    /*func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if textField.text != "" {
             return true
         }
@@ -103,10 +118,12 @@ extension WeatherViewController: UITextFieldDelegate {
             return false
         }
     }
+    */
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if let city = searchField.text {
-            weatherManager.fetchWeather(cityName: city)
+        var city = searchField.text
+        if city != "" {
+            weatherManager.fetchWeather(cityName: city!)
             activity.isHidden = false
             activity.startAnimating()
         }
