@@ -20,7 +20,8 @@ struct WeatherManager{
     var delegate: WeatherManagerDelegate?
     
     func fetchWeather(cityName: String){
-        let urlString = "\(weatherURL)&q=\(cityName)"
+        let city = (cityName as NSString).replacingOccurrences(of: " ", with: "+")
+        let urlString = "\(weatherURL)&q=\(city)"
         performRequest(with: urlString)
     }
     
