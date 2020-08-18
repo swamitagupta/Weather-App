@@ -1,6 +1,6 @@
 # Weather-App 🌤
 
-![Screenshot](https://github.com/swamitagupta/Weather-App/blob/master/images/screenshot.png){:height="20%" width="20%"}
+<img alt="Screenshot" src="images/screenshot.png" height="500">
 
 ### Features
 - [x] Get weather data instantaneously
