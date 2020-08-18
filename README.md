@@ -1,7 +1,6 @@
 # Weather-App 🌤
 
-![App Screenshot]
-(https://github.com/swamitagupta/Weather-App/blob/master/images/screenshot.png)
+![Screenshot](https://github.com/swamitagupta/Weather-App/blob/master/images/screenshot.png)
 
 ### Features
 - [x] Get weather data instantaneously
