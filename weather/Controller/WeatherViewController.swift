@@ -74,7 +74,13 @@ extension WeatherViewController: WeatherManagerDelegate{
     }
     
     func didFailWithError(error: Error) {
-        print(error)
+        print(error.localizedDescription)
+        let alert = UIAlertController(title: "Error", message: "Enter a valid city!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title:"Okay", style: .default, handler: nil))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+            self.activity.isHidden = true
+        }
     }
 }
 
